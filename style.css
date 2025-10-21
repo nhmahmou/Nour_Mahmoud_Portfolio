@@ -1,0 +1,305 @@
+:root{
+  --bg:#0e1217; --card:#141a23; --text:#eaf0f5; --muted:#9aa7b6;
+  --brand:#79e3c6; --brand-ink:#103a2f;
+  --chip:#17212b; --chip-active:#182b35;
+  --btn:#141e27; --btn-br:#2b4151;
+  --nav-h:64px; --container:1200px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-padding-top:calc(var(--nav-h) + 8px)}
+body{font:16px/1.5 system-ui,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg);padding-top:var(--nav-h)}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+.skip{position:absolute;left:-9999px}
+
+/* Container */
+.container{max-width:var(--container);margin-inline:auto;padding-inline:18px}
+
+/* Sticky Nav */
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;background:rgba(14,18,23,.92);backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid #111822}
+.navbar.scrolled{ box-shadow:0 8px 24px rgba(0,0,0,.35) }
+.nav-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:100%;gap:16px}
+.nav-left{justify-self:start}.nav-actions{justify-self:end}
+.nav-links{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;width:max-content;justify-self:center}
+.nav-links a{padding:6px 8px;border-radius:8px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-logo{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;background:var(--brand);color:#0a1714;font-weight:800}
+
+/* HERO (premium) */
+.hero{position:relative;isolation:isolate;padding:56px 0 36px}
+.hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.hero-bg .spot{position:absolute;filter:blur(60px);opacity:.35}
+.hero-bg .s1{width:520px;height:520px;left:-120px;top:-60px;background:radial-gradient(closest-side,#79e3c6,#0e1217 70%)}
+.hero-bg .s2{width:520px;height:520px;right:-120px;bottom:-80px;background:radial-gradient(closest-side,#1ec7ff,#0e1217 70%)}
+.hero-bg .grid{position:absolute;inset:-20%;background-image:linear-gradient(#131a23 1px,transparent 1px),linear-gradient(90deg,#131a23 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(closest-side,rgba(0,0,0,.35),transparent 70%)}
+
+.hero-inner{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}
+.hero-copy .hero-kicker{letter-spacing:.08em;text-transform:uppercase;color:#9db9b2;font-size:.85rem}
+.hero-title{margin:8px 0 8px;font-size:clamp(28px,4.2vw,44px);line-height:1.15}
+.hero-title .accent{color:var(--brand)}
+.hero-sub{color:#c5d3dd;max-width:60ch}
+.hero-actions{display:flex;gap:10px;margin-top:12px}
+.hero-metrics{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.hero-metrics span{background:#102227;border:1px solid #223b46;border-radius:999px;padding:6px 10px;color:#bfe7d9}
+
+.hero-card{background:linear-gradient(180deg,#122029,#0e151c);border:1px solid #1b2c37;border-radius:16px;padding:14px;display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:center;box-shadow:0 8px 40px rgba(0,0,0,.25)}
+.hero-card img{width:84px;height:84px;border-radius:12px;object-fit:cover;border:2px solid #244b48}
+.hero-card .name{font-weight:700}
+.hero-card .role{color:#9fb1bd;font-size:.95rem}
+
+@media (max-width:980px){ .nav-links{gap:10px} .hero-inner{grid-template-columns:1fr;gap:18px} }
+
+/* Sections & grids */
+section{scroll-margin-top:calc(var(--nav-h) + 10px)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;padding:10px 0}
+.muted{color:var(--muted)}
+.grid{display:grid;gap:16px;padding:16px 0}
+.cols-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+/* Cards */
+.card,.feat-card{background:var(--card);border:1px solid #0f1a23;border-radius:16px;overflow:hidden}
+.card .thumb,.feat-card .feat-img{width:100%;height:220px;object-fit:cover;background:#0a1016}
+.card-body{padding:12px 14px}
+.card-title{margin:6px 0 4px}
+.badge{position:absolute;margin:10px;background:var(--brand-ink);color:var(--brand);padding:4px 8px;border-radius:10px;display:none}
+.kbd{display:inline-block;background:#0f1b22;border:1px solid #1d3646;border-radius:8px;padding:2px 6px;margin:2px 4px 0 0;color:#bcd1dc;font-size:.85rem}
+
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--btn);border:1px solid var(--btn-br);color:var(--text);padding:8px 12px;border-radius:10px}
+.btn:hover{filter:brightness(1.08)}
+.btn-primary{background:#163a31;border-color:#215b4d}
+.btn-ghost{background:transparent;border-color:#2b4c5f}
+.btn-sm{padding:6px 10px;font-size:.9rem}
+
+/* Filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;padding:6px 0 0}
+.chip{background:var(--chip);border:1px solid #20394a;color:var(--text);border-radius:999px;padding:6px 10px;cursor:pointer}
+.chip.active{background:var(--chip-active)}
+
+/* Experience (timeline) */
+.timeline{position:relative;display:flex;flex-direction:column;gap:16px;padding:20px 0}
+.timeline:before{content:"";position:absolute;left:22px;top:0;bottom:0;width:2px;background:#1b2935}
+.timeline .item{display:grid;grid-template-columns:160px 1fr;gap:12px;background:var(--card);border:1px solid #0f1a23;border-radius:14px;padding:12px 14px;position:relative}
+.timeline .item:before{content:"";position:absolute;left:-35px;top:18px;width:12px;height:12px;border-radius:50%;background:#79e3c6;box-shadow:0 0 0 4px #112126}
+.timeline .time{font-weight:600;color:#b7c8d4}
+.timeline h4{margin:2px 0}
+.timeline .place{color:#9fb1bd;margin-bottom:6px}
+.timeline ul{margin:0 0 6px 16px}
+.timeline .tags{display:flex;gap:6px;flex-wrap:wrap}
+
+/* Coursework / Skills cards */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;padding:10px 0}
+.skill{background:var(--card);border:1px solid #0f1a23;border-radius:12px;padding:12px}
+.skill-top{display:flex;justify-content:space-between;gap:8px}
+.callout{padding:18px;border:1px dashed #254453}
+
+/* Skills (logos) – standardized boxes */
+.skills-logo-wrap{display:grid;gap:26px;padding:6px 0 18px}
+.skills-logo-group h3{margin:8px 4px 6px;font-size:1.05rem;color:#d9efe9}
+.logo-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.logo-card{background:var(--card);border:1px solid #0f1a23;border-radius:14px;padding:14px;display:grid;justify-items:center;gap:10px;transition:transform .35s, box-shadow .35s, border-color .35s}
+.logo-card:hover{transform:translateY(-4px) rotate3d(1,1,0,1deg);box-shadow:0 6px 24px rgba(0,0,0,.25);border-color:#1b3941}
+.logo-img-wrap{width:72px;height:72px;aspect-ratio:1/1;display:grid;place-items:center;background:#0d1820;border:1px solid #1a2a36;border-radius:12px}
+.logo-img-wrap img{width:70%;height:70%;object-fit:contain}
+.logo-title{font-size:.95rem;color:#eaf0f5}
+
+/* Reveal & polish */
+@media (prefers-reduced-motion:no-preference){
+  [data-animate="reveal"]{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
+  [data-animate="reveal"].is-visible{opacity:1;transform:none}
+}
+.card,.feat-card{transition:transform .28s, box-shadow .28s, border-color .28s}
+.card:hover,.feat-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.25);border-color:#1a3b3d}
+
+/* Modal (centered, consistent sizing) */
+.modal{position:fixed;inset:0;display:grid;place-items:center}
+.modal[hidden]{display:none}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px)}
+.modal-inner{position:relative;z-index:2;max-width:1000px;width:92vw;max-height:92vh;background:#121721;border:1px solid #1a2b37;border-radius:16px;padding:16px;display:flex;flex-direction:column}
+.modal-close{position:absolute;right:10px;top:10px;background:#162530;border:1px solid #244050;border-radius:10px;color:#dfeaf0;padding:6px 10px}
+.modal-media{position:relative;margin:10px 0}
+.media-stage{width:100%;height:clamp(420px,70vh,820px);display:flex;align-items:center;justify-content:center;background:#0a1016;border:1px solid #0f1a23;border-radius:12px;overflow:hidden}
+.media-stage img,.media-stage video{height:100%;width:auto;max-width:100%;object-fit:contain;margin:auto;display:block;background:#0a1016}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:#13262f;border:1px solid #1f3a46;border-radius:12px;color:#d6edf9;padding:6px 10px}
+.carousel-btn.prev{left:6px}.carousel-btn.next{right:6px}
+
+/* Contact form */
+.contact-form{width:100%;background:var(--card);border:1px solid #0f1a23;border-radius:14px;padding:14px;display:grid;gap:12px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-form input,.contact-form textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #233443;background:#0e1720;color:var(--text);outline:none}
+.contact-form input:focus,.contact-form textarea:focus{border-color:#2d4e60;box-shadow:0 0 0 2px #203645 inset}
+.contact-form .btn{width:auto;justify-self:end}
+
+/* Footer */
+.footer{padding:24px 0 40px;color:#9fb1bd}
+
+/* Responsive */
+@media (max-width:720px){
+  .form-row{grid-template-columns:1fr}
+  .nav-links{width:100%;justify-self:center;justify-content:center}
+}
+
+
+/* --- Card spacing & breathing room --- */
+.grid{ gap: 24px; }                 /* more space between cards */
+
+.card .thumb,
+.feat-card .feat-img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  background:#0a1016;
+  display:block;
+  border-bottom:1px solid #0f1a23; /* visual separation from text */
+}
+
+.card,
+.feat-card{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #0f1a23;
+  background:var(--card);
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);  /* subtle elevation */
+}
+
+/* more inner padding so text/buttons aren’t glued to edges */
+.card-body,
+.feat-card .feat-content{
+  padding: 18px 20px 20px;
+}
+
+/* add a little vertical spacing between blocks inside cards */
+.card-body > * + *,
+.feat-card .feat-content > * + *{
+  margin-top: 10px;
+}
+
+/* optional: slightly larger section spacing so the grid doesn’t feel cramped */
+.section-head + .grid{ padding-top: 10px; }
+
+/* --- Fix modal image fit for wide screenshots --- */
+.media-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;         /* prevents overflow */
+  padding: 10px;
+  background: #0a1016;
+  border: 1px solid #0f1a23;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.media-stage img,
+.media-stage video {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;         /* use viewport height for control */
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  display: block;
+  margin: 0 auto;
+  background: #0a1016;
+}
+
+/* Lock the page when a modal is open */
+body.modal-open { overflow: hidden; }
+
+/* Modal container now scrolls when content is tall */
+.modal-inner{
+  position: relative;
+  max-width: 1000px;
+  width: 92vw;
+  max-height: 92vh;       /* viewport cap */
+  overflow: auto;         /* <-- key: scroll inside the modal */
+  background:#121721;
+  border:1px solid #1a2b37;
+  border-radius:16px;
+  padding:16px 16px 18px;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Big media sits comfortably but never overflows; keeps aspect ratio */
+.media-stage{
+  width:100%;
+  height:auto;
+  max-height:70vh;        /* so the rest of the case study is reachable */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0a1016;
+  border:1px solid #0f1a23;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.media-stage img,
+.media-stage video{
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:68vh;        /* small buffer under stage height */
+  object-fit:contain;
+  display:block;
+  margin:auto;
+  background:#0a1016;
+}
+
+/* Optional: nicer scrollbar inside modal (WebKit) */
+.modal-inner::-webkit-scrollbar{ width:10px }
+.modal-inner::-webkit-scrollbar-thumb{ background:#22323f; border-radius:8px }
+.modal-inner::-webkit-scrollbar-track{ background:#121721 }
+
+
+/* Metric chips: spacing + readability (cards + featured + modal) */
+.metrics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 10px;            /* <-- adds space between chips */
+  margin-top:6px;
+}
+.metrics .metric{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;                 /* space between label and value */
+  padding:4px 8px;
+  border-radius:999px;
+  background:#0f1b22;
+  border:1px solid #1d3646;
+  color:#cfe1ea;
+  font-size:.92rem;
+}
+.metrics .metric i{
+  font-style:italic;
+  color:#9fb1bd;
+}
+/* Slightly crisper downscale for UI screenshots (not pixel art) */
+.card .thumb,
+.feat-card .feat-img{
+  image-rendering: -webkit-optimize-contrast; /* Safari/WebKit */
+  image-rendering: auto;                      /* others */
+}
+
+
+body.modal-open{ overflow:hidden; }
+/* Contact layout fix */
+#contact .container { max-width: 920px; margin-inline: auto; }
+.contact-form { max-width: 1195px; margin: 0 auto; }
+.contact-form input, .contact-form textarea { width: 100%; }
+
+.contact-form .form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.contact-form .form-row input { flex: 1 1 260px; min-width: 220px; }
+
+.form-status { margin: 8px 0 0; font-size: .95rem; }
+.form-status.ok { color: var(--success, #45d48a); }
+.form-status.err { color: var(--danger, #ff6b6b); }

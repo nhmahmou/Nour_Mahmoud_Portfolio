@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nour Mahmoud — Story Mode</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body,html{height:100%;margin:0}
+    .stage{position:fixed;inset:0;display:grid;place-items:center;background:#0b0f12}
+    #game{width:100vw;height:100vh;display:block;background:#0b0f12}
+    #hud{position:fixed;left:16px;bottom:16px;max-width:360px;transition:opacity .2s}
+    #hud .panel{background:rgba(9,20,26,.8);border:1px solid #1f2937;color:#e8f3f0;padding:10px 12px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .topbar{position:fixed;top:10px;left:10px;right:10px;display:flex;justify-content:space-between;align-items:center;color:#cfe8e4}
+    .topbar a{border:1px solid #334155;border-radius:10px;padding:6px 10px;background:rgba(12,21,27,.7)}
+    .hint{position:fixed;right:16px;bottom:16px;color:#a7b3b0}
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body data-page="story">
+  <div class="topbar">
+    <a href="index.html">← Back to Portfolio</a>
+    <div>Use <b>W/A/S/D</b> or <b>Arrow Keys</b></div>
+  </div>
+  <div class="stage">
+    <canvas id="game"></canvas>
+  </div>
+  <div id="hud" aria-live="polite"></div>
+  <div class="hint">Glide to the glowing beacons to reveal milestones and open case studies</div>
+</body>
+</html>

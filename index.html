@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nour Mahmoud | Portfolio</title>
+  <meta name="description" content="Nour Mahmoud — gameplay, engines, networking, HCI, and software engineering. Case studies, projects, skills, contact." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- NAV -->
+  <nav class="navbar" aria-label="Primary">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <a class="brand" href="#home" aria-label="Home">
+          <span class="brand-logo">N</span>
+          <span class="brand-name">Nour Mahmoud</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#coursework">Coursework</a></li>
+        <li><a href="#access">Code Access</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn btn-sm" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero" role="banner">
+    <div class="hero-bg">
+      <span class="spot s1"></span>
+      <span class="spot s2"></span>
+      <span class="grid"></span>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="hero-kicker">Software • Systems • Interaction</div>
+        <h1 class="hero-title">I build <span class="accent"> systems</span> that work, scale, and feel right.</h1>
+        <p class="hero-sub">
+          From multithreaded <b>C++</b> engines and <b> networked simulations</b> to polished <b>web apps</b> and <b>research-backed interaction</b> systems. I design and code projects that merge performance with experience.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#featured">See flagship work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+        <div class="hero-metrics">
+          <span><b>1000+ hrs</b> coding</span>
+          <span><b>8+ full projects</b> from engines to research</span>
+          <span><b>HCI</b> research (REU)</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img id="profilePic" src="profile.jpg" alt="Portrait of Nour Mahmoud" />
+        <div class="hero-card-meta">
+          <div class="name">Nour Mahmoud</div>
+          <div class="role">Game & Software Engineer</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- FEATURED -->
+    <section id="featured" aria-labelledby="featured-title" data-animate="reveal">
+      <div class="section-head container">
+        <h2 id="featured-title">Featured Case Studies</h2>
+        <p class="muted">Problem → Role → Tech → Decisions → Results</p>
+      </div>
+      <div id="featuredGrid" class="grid cols-2 container"></div>
+
+      <template id="featTpl">
+        <article class="feat-card" data-slug="">
+          <img class="feat-img" alt="" loading="lazy" />
+          <div class="feat-content">
+            <h3 class="feat-title"></h3>
+            <div class="metrics"></div>
+            <p class="feat-blurb"></p>
+            <div class="feat-lines">
+              <div class="line"><b>Role:</b> <span class="feat-role"></span></div>
+              <div class="line"><b>Tech:</b> <span class="feat-tech"></span></div>
+            </div>
+            <div class="feat-actions">
+              <button class="btn btn-sm btn-primary view-details" type="button">Case study</button>
+              <a class="btn btn-sm btn-ghost watch-btn" target="_blank" rel="noopener">Watch</a>
+            </div>
+          </div>
+        </article>
+      </template>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title" data-animate="reveal">
+      <div class="section-head container">
+        <h2 id="projects-title">Projects</h2>
+        <div class="filters" role="toolbar" aria-label="Project filters">
+          <button class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="Game Dev">Game Dev</button>
+          <button class="chip" data-filter="Software Dev">Software Dev</button>
+          <button class="chip" data-filter="HCI/UX">HCI/UX</button>
+          <button class="chip" data-filter="AI/Algorithms">AI/Algorithms</button>
+          <button class="chip" data-filter="Video">Video</button>
+        </div>
+      </div>
+      <div id="projectGrid" class="grid cols-3 container" role="list"></div>
+
+      <template id="cardTpl">
+        <article class="card project-card" role="listitem" data-tags="" data-slug="" tabindex="0">
+          <span class="badge">Featured</span>
+          <img class="thumb" alt="" loading="lazy" />
+          <div class="card-body">
+            <h3 class="card-title"></h3>
+            <div class="metrics"></div>
+            <p class="card-blurb"></p>
+            <div class="tags"></div>
+            <div class="links"></div>
+            <div class="actions">
+              <button class="btn btn-ghost btn-sm view-details" type="button">View details</button>
+            </div>
+          </div>
+        </article>
+      </template>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section-alt" data-animate="reveal">
+      <div class="section-head container">
+        <h2>Skills</h2>
+        <p class="muted">Quick visual scan — grouped by category</p>
+      </div>
+      <div id="skillsLogoWrap" class="skills-logo-wrap container"></div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" data-animate="reveal">
+      <div class="section-head container">
+        <h2>Experience</h2><p class="muted">Selected roles & impact</p>
+      </div>
+      <div class="timeline container" id="timeline"></div>
+    </section>
+
+    <!-- COURSEWORK -->
+    <section id="coursework" class="section-alt" data-animate="reveal">
+      <div class="section-head container">
+        <h2>Coursework</h2><p class="muted">Representative classes & competencies</p>
+      </div>
+      <div class="skills skills-cw container" id="courseworkGrid"></div>
+    </section>
+
+    <!-- CODE ACCESS -->
+    <section id="access" class="section-alt" data-animate="reveal">
+      <div class="section-head container">
+        <h2>Code Access</h2>
+      </div>
+      <div class="grid cols-2 container">
+        <div class="card callout">
+          <h3>Private repos, walk-throughs on request</h3>
+          <p class="muted">
+            Many projects are tied to coursework, research, or team repos. I can walk through the design and implementation,
+            and I’m happy to share code <b>privately upon request for a short period</b> where licensing allows.
+          </p>
+          <a class="btn btn-primary" href="#contact" id="reqAccessBtn" data-intent="access">
+            Request temporary access
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+ <form id="contactForm" name="contact" netlify data-netlify="true" class="contact-form">
+  <input type="hidden" name="form-name" value="contact" />
+  <!-- optional honeypot -->
+  <input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;opacity:0;" aria-hidden="true" />
+  <div class="form-row">
+    <input name="name" placeholder="Your name" required />
+    <input type="email" name="email" placeholder="Email" required />
+  </div>
+  <textarea name="message" placeholder="Message" rows="5" required></textarea>
+  <div class="form-status" aria-live="polite"></div>
+  <button class="btn btn-primary" type="submit">Send</button>
+</form>
+
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Nour Mahmoud • Built with vanilla HTML/CSS/JS • <a href="#home">Back to top</a></div>
+  </footer>
+
+  <!-- MODAL -->
+<div id="projectModal" class="modal" hidden>
+  <div class="modal-backdrop"></div>
+
+  <div class="modal-inner">
+    <button class="modal-close" aria-label="Close">✕</button>
+
+    <!-- Sticky header for title + metrics + blurb -->
+    <div class="modal-head">
+      <h3 id="modalTitle"></h3>
+      <div class="metrics" id="modalMetrics"></div>
+      <p class="muted" id="modalBlurb"></p>
+    </div>
+
+    <!-- Media carousel -->
+    <div class="modal-media">
+      <button class="carousel-btn prev" aria-label="Previous media">‹</button>
+      <div class="media-stage" id="mediaStage" aria-live="polite"></div>
+      <button class="carousel-btn next" aria-label="Next media">›</button>
+    </div>
+
+    <!-- CASE sections get injected here -->
+    <div class="case-sections" id="caseSections"></div>
+
+    <!-- Links (PDFs, gameplay, etc.) -->
+    <div class="links" id="modalLinks"></div>
+  </div>
+</div>
+
+
+</body>
+</html>
