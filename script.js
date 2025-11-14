@@ -1046,3 +1046,66 @@ Thanks!`;
     }
   });
 })();
+
+// ===== Contact form → Google Apps Script =====
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  if (!form) return; // if the form isn't on the page, bail
+
+  const statusEl = form.querySelector(".form-status");
+
+  // Your deployed Google Apps Script web app URL
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyC2HkMbsMcMJuB3foHbyVlnOQfoF5ns6E5yM5h1kGUcLYmrykzJqpaO06ba3YTwu_e3g/exec";
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // honeypot check (simple bot filter)
+    const honeypot = form.querySelector('input[name="bot-field"]');
+    if (honeypot && honeypot.value) {
+      // Bot detected: silently abort
+      return;
+    }
+
+    if (statusEl) {
+      statusEl.textContent = "Sending…";
+    }
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: formData
+      });
+
+      let ok = false;
+      try {
+        const data = await res.json();
+        ok = data && data.success;
+      } catch {
+        ok = res.ok;
+      }
+
+      if (ok) {
+        if (statusEl) {
+          statusEl.textContent = "Sent ✅ I’ll get back to you soon.";
+        }
+        form.reset();
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (err) {
+      console.error(err);
+      if (statusEl) {
+        statusEl.textContent = "Something went wrong. Please try again.";
+      }
+    }
+  });
+}
+
+// run after DOM is ready
+document.addEventListener("DOMContentLoaded", initContactForm);
+
+
+
