@@ -1,83 +1,167 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light-purple">
 <head>
+  <!-- basic page setup stuff -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nour Mahmoud | Portfolio</title>
-  <meta name="description" content="Nour Mahmoud — gameplay, engines, networking, HCI, and software engineering. Case studies, projects, skills, contact." />
+  
+  <!-- seo stuff so search engines know what this is -->
+  <meta name="description" content="Nour Mahmoud: Software Engineer, Game Developer, and UI/UX Designer. Building elegant software and seamless user experiences through engineering excellence and thoughtful design." />
+  <meta name="keywords" content="software engineer, game developer, UI/UX designer, full stack developer, portfolio" />
+  <meta name="author" content="Nour Mahmoud" />
+  
+  <!-- preload these so they load faster -->
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="preload" href="script.js" as="script" />
+  
+  <!-- actually link the css and js files -->
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
+
+  <!-- skip link for accessibility - lets screen readers jump to main content -->
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- NAV -->
+  <!-- navigation bar at the top -->
   <nav class="navbar" aria-label="Primary">
     <div class="container nav-inner">
+      <!-- left side with my name/logo -->
       <div class="nav-left">
         <a class="brand" href="#home" aria-label="Home">
           <span class="brand-logo">N</span>
           <span class="brand-name">Nour Mahmoud</span>
         </a>
       </div>
+      <!-- hamburger menu button for mobile -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <!-- navigation links -->
       <ul class="nav-links">
         <li><a href="#featured">Featured</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#coursework">Coursework</a></li>
-        <li><a href="#access">Code Access</a></li>
         <li><a href="#contactForm">Contact</a></li>
+        <!-- resume button that shows on mobile -->
+        <li class="nav-resume-mobile"><a class="btn btn-sm" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">Résumé</a></li>
       </ul>
+      <!-- resume button for desktop -->
       <div class="nav-actions">
         <a class="btn btn-sm" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">Résumé</a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- hero section -->
   <header id="home" class="hero" role="banner">
+    <!-- background effects with spots and grid -->
     <div class="hero-bg">
       <span class="spot s1"></span>
       <span class="spot s2"></span>
       <span class="grid"></span>
     </div>
     <div class="container hero-inner">
+      <!-- left side with text content -->
       <div class="hero-copy">
-        <div class="hero-kicker">Software • Systems • Interaction</div>
-        <h1 class="hero-title">I build <span class="accent"> systems</span> that work, scale, and feel right.</h1>
+        <div class="hero-kicker">Software Engineer • Game Developer • UI/UX Designer</div>
+        <h1 class="hero-title">Full-Stack Developer - <span class="accent">Game Systems</span></h1>
         <p class="hero-sub">
-          From multithreaded <b>C++</b> engines and <b> networked simulations</b> to polished <b>web apps</b> and <b>research-backed interaction</b> systems. I design and code projects that merge performance with experience.
+          From multithreaded C++ engines and networked simulations to polished web apps and research-backed interaction systems. I design and code projects that merge performance with experience.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#featured">See flagship work</a>
-          <a class="btn btn-ghost" href="#contactForm">Get in touch</a>
+        <!-- tech stack listed inline -->
+        <div class="hero-tech-inline">
+          <span>(C++ • Java • Python • React • Spring • Godot • Figma)</span>
         </div>
+        <!-- action buttons -->
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#featured">See projects</a>
+          <a class="btn btn-ghost" href="#contactForm">Contact Me</a>
+        </div>
+        <!-- metrics showing stats -->
         <div class="hero-metrics">
-          <span><b>1000+ hrs</b> coding</span>
-          <span><b>8+ full projects</b> from engines to research</span>
-          <span><b>HCI</b> research (REU)</span>
+          <div class="metric-tag">
+            <div class="metric-value">1000+</div>
+            <div class="metric-label">HOURS OF DEVELOPMENT</div>
+          </div>
+          <div class="metric-tag">
+            <div class="metric-value">8+</div>
+            <div class="metric-label">COMPLETED PROJECTS</div>
+          </div>
+          <div class="metric-tag">
+            <div class="metric-value">HCI Research</div>
+            <div class="metric-label">(REU)</div>
+          </div>
         </div>
       </div>
-      <div class="hero-card">
-        <img id="profilePic" src="profile.jpg" alt="Portrait of Nour Mahmoud" />
-        <div class="hero-card-meta">
-          <div class="name">Nour Mahmoud</div>
-          <div class="role">Game & Software Engineer</div>
+      <!-- right side with the lanyard card thing -->
+      <div class="hero-lanyard">
+        <!-- the clip part at the top -->
+        <div class="lanyard-clip">
+          <div class="clip-icon">👤</div>
+          <span class="clip-label">Profile</span>
+        </div>
+        <!-- the actual card body -->
+        <div class="lanyard-body">
+          <!-- profile picture -->
+          <div class="lanyard-image">
+            <img id="profilePic" src="profile.jpg" alt="Portrait of Nour Mahmoud" />
+          </div>
+          <!-- card content -->
+          <div class="lanyard-content">
+            <div class="lanyard-header">
+              <div class="name">Nour Mahmoud</div>
+              <div class="role">game dev • software engineering • ui/ux</div>
+            </div>
+            <!-- school badge thing -->
+            <div class="lanyard-badge">
+              <span class="school-badge">NC STATE</span>
+              <span class="student-id">#NM-2026</span>
+            </div>
+            <!-- contact info -->
+            <div class="lanyard-contact">
+              <div class="contact-item">
+                <span class="contact-label">Email:</span>
+                <a href="mailto:nhmahmou@ncsu.edu" class="contact-link">nhmahmou@ncsu.edu</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">LinkedIn:</span>
+                <a href="https://linkedin.com/in/nhmahmou" target="_blank" rel="noopener" class="contact-link">linkedin.com/in/nhmahmou</a>
+              </div>
+            </div>
+            <!-- buttons in the card -->
+            <div class="lanyard-actions">
+              <a class="btn btn-sm btn-primary" href="#contactForm">Contact Me</a>
+              <a class="btn btn-sm btn-ghost" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">Résumé</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- scroll indicator at the bottom -->
+    <div class="hero-scroll">
+      <div class="hero-scroll-indicator"></div>
+      <span>Scroll to explore</span>
+    </div>
   </header>
 
+  <!-- main content area -->
   <main id="main">
-    <!-- FEATURED -->
+    <!-- featured case studies section -->
     <section id="featured" aria-labelledby="featured-title" data-animate="reveal">
       <div class="section-head container">
         <h2 id="featured-title">Featured Case Studies</h2>
-        <p class="muted">Problem → Role → Tech → Decisions → Results</p>
+        <p class="muted">Problem • Role • Tech • Decisions • Results</p>
       </div>
+      <!-- grid where featured projects get injected by js -->
       <div id="featuredGrid" class="grid cols-2 container"></div>
 
+      <!-- template for featured cards - js clones this and fills it in -->
       <template id="featTpl">
         <article class="feat-card" data-slug="">
           <img class="feat-img" alt="" loading="lazy" />
@@ -98,21 +182,23 @@
       </template>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- all projects section -->
     <section id="projects" aria-labelledby="projects-title" data-animate="reveal">
       <div class="section-head container">
         <h2 id="projects-title">Projects</h2>
+        <!-- filter chips to filter projects by category -->
         <div class="filters" role="toolbar" aria-label="Project filters">
           <button class="chip" data-filter="all" aria-pressed="true">All</button>
           <button class="chip" data-filter="Game Dev">Game Dev</button>
           <button class="chip" data-filter="Software Dev">Software Dev</button>
           <button class="chip" data-filter="HCI/UX">HCI/UX</button>
           <button class="chip" data-filter="AI/Algorithms">AI/Algorithms</button>
-          <button class="chip" data-filter="Video">Video</button>
         </div>
       </div>
+      <!-- grid where all project cards get injected by js -->
       <div id="projectGrid" class="grid cols-3 container" role="list"></div>
 
+      <!-- template for project cards - js clones this and fills it in (similar to featured)-->
       <template id="cardTpl">
         <article class="card project-card" role="listitem" data-tags="" data-slug="" tabindex="0">
           <span class="badge">Featured</span>
@@ -131,108 +217,96 @@
       </template>
     </section>
 
-    <!-- SKILLS -->
+    <!-- skills section with logos -->
     <section id="skills" class="section-alt" data-animate="reveal">
       <div class="section-head container">
         <h2>Skills</h2>
-        <p class="muted">Quick visual scan — grouped by category</p>
+        <p class="muted">Technical competencies organized by category</p>
       </div>
+      <!-- container where skill logos get injected by js -->
       <div id="skillsLogoWrap" class="skills-logo-wrap container"></div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- experience/timeline section -->
     <section id="experience" data-animate="reveal">
       <div class="section-head container">
         <h2>Experience</h2><p class="muted">Selected roles & impact</p>
       </div>
+      <!-- timeline where experience items get injected by js -->
       <div class="timeline container" id="timeline"></div>
     </section>
 
-    <!-- COURSEWORK -->
+    <!-- coursework section -->
     <section id="coursework" class="section-alt" data-animate="reveal">
       <div class="section-head container">
         <h2>Coursework</h2><p class="muted">Representative classes & competencies</p>
       </div>
+      <!-- grid where coursework gets injected by js -->
       <div class="skills skills-cw container" id="courseworkGrid"></div>
     </section>
 
-    <!-- CODE ACCESS -->
-    <section id="access" class="section-alt" data-animate="reveal">
+    <!-- contact form section -->
+    <section id="contact" data-animate="reveal">
       <div class="section-head container">
-        <h2>Code Access</h2>
+        <h2>Contact</h2>
+        <p class="muted">Open to opportunities and collaborations. Let's discuss how I can contribute to your team</p>
       </div>
-      <div class="grid cols-2 container">
-        <div class="card callout">
-          <h3>Private repos, walk-throughs on request</h3>
-          <p class="muted">
-            Many projects are tied to coursework, research, or team repos. I can walk through the design and implementation,
-            and I’m happy to share code <b>privately upon request for a short period</b> where licensing allows.
-          </p>
-          <a class="btn btn-primary" href="#contact" id="reqAccessBtn" data-intent="access">
-            Request temporary access
-          </a>
-
-        </div>
+      <div class="container">
+        <form id="contactForm" name="contact" class="contact-form">
+          
+          <!-- form fields -->
+          <div class="form-row">
+            <input name="name" placeholder="Your name" required aria-label="Your name" />
+            <input type="email" name="email" placeholder="Email" required aria-label="Email address" />
+          </div>
+          <textarea name="message" placeholder="Message" rows="5" required aria-label="Message"></textarea>
+          <!-- status message area for form feedback -->
+          <div class="form-status" aria-live="polite"></div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
       </div>
     </section>
-
-    <!-- CONTACT -->
- <form id="contactForm" name="contact" class="contact-form">
-  <!-- optional honeypot -->
-  <input
-    type="text"
-    name="bot-field"
-    tabindex="-1"
-    autocomplete="off"
-    style="position:absolute;left:-10000px;opacity:0;"
-    aria-hidden="true"
-  />
-  <div class="form-row">
-    <input name="name" placeholder="Your name" required />
-    <input type="email" name="email" placeholder="Email" required />
-  </div>
-  <textarea name="message" placeholder="Message" rows="5" required></textarea>
-  <div class="form-status" aria-live="polite"></div>
-  <button class="btn btn-primary" type="submit">Send</button>
-</form>
-
 
 
 
   </main>
 
+  <!-- footer -->
   <footer class="footer">
-    <div class="container">© <span id="year"></span> Nour Mahmoud • Built with vanilla HTML/CSS/JS • <a href="#home">Back to top</a></div>
+    <div class="container">© <span id="year"></span> Nour Mahmoud • Built with HTML/CSS/JS • <a href="#home">Back to top</a></div>
   </footer>
 
-  <!-- MODAL -->
-<div id="projectModal" class="modal" hidden>
-  <div class="modal-backdrop"></div>
 
-  <div class="modal-inner">
-    <button class="modal-close" aria-label="Close">✕</button>
+  <!-- modal popup for project details -->
+  <div id="projectModal" class="modal" hidden>
+    <!-- backdrop that darkens the background -->
+    <div class="modal-backdrop"></div>
 
-    <!-- Sticky header for title + metrics + blurb -->
-    <div class="modal-head">
-      <h3 id="modalTitle"></h3>
-      <div class="metrics" id="modalMetrics"></div>
-      <p class="muted" id="modalBlurb"></p>
+    <div class="modal-inner">
+      <!-- close button -->
+      <button class="modal-close" aria-label="Close">✕</button>
+
+      <!-- header with title, metrics, and description -->
+      <div class="modal-head">
+        <h3 id="modalTitle"></h3>
+        <div class="metrics" id="modalMetrics"></div>
+        <p class="muted" id="modalBlurb"></p>
+      </div>
+
+      <!-- media carousel for images/videos -->
+      <div class="modal-media">
+        <button class="carousel-btn prev" aria-label="Previous media" aria-keyshortcuts="ArrowLeft">‹</button>
+        <div class="media-stage" id="mediaStage" aria-live="polite" role="img" aria-label="Project media"></div>
+        <button class="carousel-btn next" aria-label="Next media" aria-keyshortcuts="ArrowRight">›</button>
+      </div>
+
+      <!-- case study sections get injected here by js -->
+      <div class="case-sections" id="caseSections"></div>
+
+      <!-- links to external stuff like gameplay videos, pdfs, etc -->
+      <div class="links" id="modalLinks"></div>
     </div>
-
-    <!-- Media carousel -->
-    <div class="modal-media">
-      <button class="carousel-btn prev" aria-label="Previous media">‹</button>
-      <div class="media-stage" id="mediaStage" aria-live="polite"></div>
-      <button class="carousel-btn next" aria-label="Next media">›</button>
-    </div>
-
-    <!-- CASE sections get injected here -->
-    <div class="case-sections" id="caseSections"></div>
-
-    <!-- Links (PDFs, gameplay, etc.) -->
-    <div class="links" id="modalLinks"></div>
   </div>
-</div>
 
 
 </body>
