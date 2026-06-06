@@ -1,204 +1,153 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light-purple">
 <head>
-  <!-- basic page setup stuff -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nour Mahmoud | Portfolio</title>
-  
-  <!-- seo stuff so search engines know what this is -->
-  <meta name="description" content="Nour Mahmoud: Software Engineer, Game Developer, and UI/UX Designer. Building elegant software and seamless user experiences through engineering excellence and thoughtful design." />
-  <meta name="keywords" content="software engineer, game developer, UI/UX designer, full stack developer, portfolio" />
+  <title>Nour Mahmoud | Software Engineer</title>
+
+  <meta name="description" content="Nour Mahmoud | Software Engineer. Full-stack and systems engineering: React/Spring Boot web apps, a multithreaded C++ game engine with networking, WebGL graphics, and published HCI research. NC State CS graduate, 4.0 GPA, ranked #1 in class." />
+  <meta name="keywords" content="software engineer, full-stack developer, systems programming, C++, Java, React, Spring Boot, REST APIs, WebGL, distributed systems, new grad software engineer" />
   <meta name="author" content="Nour Mahmoud" />
-  
-  <!-- preload these so they load faster -->
+
   <link rel="preload" href="style.css" as="style" />
   <link rel="preload" href="script.js" as="script" />
-  
-  <!-- actually link the css and js files -->
+
   <link rel="stylesheet" href="style.css" />
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="theme-light-purple">
 
-  <!-- skip link for accessibility - lets screen readers jump to main content -->
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- navigation bar at the top -->
   <nav class="navbar" aria-label="Primary">
     <div class="container nav-inner">
-      <!-- left side with my name/logo -->
       <div class="nav-left">
         <a class="brand" href="#home" aria-label="Home">
           <span class="brand-logo">N</span>
           <span class="brand-name">Nour Mahmoud</span>
         </a>
       </div>
-      <!-- hamburger menu button for mobile -->
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <!-- navigation links -->
       <ul class="nav-links">
-        <li><a href="#featured">Featured</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#interactive">Live Demo</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#coursework">Coursework</a></li>
-        <li><a href="#contactForm">Contact</a></li>
-        <!-- resume button that shows on mobile -->
-        <li class="nav-resume-mobile"><a class="btn btn-sm" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">Résumé</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-resume-mobile"><a class="btn btn-sm" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
       </ul>
-      <!-- resume button for desktop -->
       <div class="nav-actions">
-        <a class="btn btn-sm" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">Résumé</a>
+        <a class="btn btn-sm" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a>
       </div>
     </div>
   </nav>
 
-  <!-- hero section -->
   <header id="home" class="hero" role="banner">
-    <!-- background effects with spots and grid -->
     <div class="hero-bg">
       <span class="spot s1"></span>
       <span class="spot s2"></span>
       <span class="grid"></span>
     </div>
     <div class="container hero-inner">
-      <!-- left side with text content -->
       <div class="hero-copy">
-        <div class="hero-kicker">Software Engineer • Game Developer • UI/UX Designer</div>
-        <h1 class="hero-title">Full-Stack Developer - <span class="accent">Game Systems</span></h1>
+        <div class="hero-kicker">#1-RANKED COMPUTER SCIENCE GRADUATE &middot; NC STATE</div>
+        <h1 class="hero-title">Software <span class="accent">Engineer</span></h1>
         <p class="hero-sub">
-          From multithreaded C++ engines and networked simulations to polished web apps and research-backed interaction systems. I design and code projects that merge performance with experience.
+          I've shipped production systems across the full stack: React and Spring Boot web apps, a C++ multiplayer game engine, a Unity plugin for a nonprofit, and 3D games in WebGL and Unreal. 13+ projects, published research, and a bias toward getting the architecture right.
         </p>
-        <!-- tech stack listed inline -->
         <div class="hero-tech-inline">
-          <span>(C++ • Java • Python • React • Spring • Godot • Figma)</span>
+          <span>(C++ &middot; Java &middot; C# &middot; Python &middot; React &middot; Spring Boot &middot; SQL &middot; WebGL)</span>
         </div>
-        <!-- action buttons -->
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#featured">See projects</a>
+          <a class="btn btn-primary" href="#projects">See projects</a>
           <a class="btn btn-ghost" href="#contactForm">Contact Me</a>
+          <a class="btn btn-ghost" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a>
         </div>
-        <!-- metrics showing stats -->
         <div class="hero-metrics">
           <div class="metric-tag">
-            <div class="metric-value">1000+</div>
-            <div class="metric-label">HOURS OF DEVELOPMENT</div>
+            <div class="metric-value">4.0</div>
+            <div class="metric-label">GPA &middot; #1 RANKED</div>
           </div>
           <div class="metric-tag">
-            <div class="metric-value">8+</div>
-            <div class="metric-label">COMPLETED PROJECTS</div>
+            <div class="metric-value">HCII 2026</div>
+            <div class="metric-label">PUBLISHED RESEARCH</div>
           </div>
           <div class="metric-tag">
-            <div class="metric-value">HCI Research</div>
-            <div class="metric-label">(REU)</div>
+            <div class="metric-value">13+</div>
+            <div class="metric-label">PROJECTS SHIPPED</div>
           </div>
         </div>
       </div>
-      <!-- right side with the lanyard card thing -->
       <div class="hero-lanyard">
-        <!-- the clip part at the top -->
         <div class="lanyard-clip">
-          <div class="clip-icon">👤</div>
+          <div class="clip-icon"></div>
           <span class="clip-label">Profile</span>
         </div>
-        <!-- the actual card body -->
         <div class="lanyard-body">
-          <!-- profile picture -->
           <div class="lanyard-image">
             <img id="profilePic" src="profile.jpg" alt="Portrait of Nour Mahmoud" />
           </div>
-          <!-- card content -->
           <div class="lanyard-content">
             <div class="lanyard-header">
               <div class="name">Nour Mahmoud</div>
-              <div class="role">game dev • software engineering • ui/ux</div>
+              <div class="role">software engineer &middot; full-stack &amp; systems</div>
             </div>
-            <!-- school badge thing -->
             <div class="lanyard-badge">
               <span class="school-badge">NC STATE</span>
               <span class="student-id">#NM-2026</span>
             </div>
-            <!-- contact info -->
             <div class="lanyard-contact">
               <div class="contact-item">
                 <span class="contact-label">Email:</span>
-                <a href="mailto:nhmahmou@ncsu.edu" class="contact-link">nhmahmou@ncsu.edu</a>
+                <a href="mailto:nour.004@hotmail.com" class="contact-link">nour.004@hotmail.com</a>
               </div>
               <div class="contact-item">
                 <span class="contact-label">LinkedIn:</span>
                 <a href="https://linkedin.com/in/nhmahmou" target="_blank" rel="noopener" class="contact-link">linkedin.com/in/nhmahmou</a>
               </div>
             </div>
-            <!-- buttons in the card -->
             <div class="lanyard-actions">
               <a class="btn btn-sm btn-primary" href="#contactForm">Contact Me</a>
-              <a class="btn btn-sm btn-ghost" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">Résumé</a>
+              <a class="btn btn-sm btn-ghost" href="assets/Nour Mahmoud _ General.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- scroll indicator at the bottom -->
     <div class="hero-scroll">
       <div class="hero-scroll-indicator"></div>
       <span>Scroll to explore</span>
     </div>
   </header>
 
-  <!-- main content area -->
   <main id="main">
-    <!-- featured case studies section -->
-    <section id="featured" aria-labelledby="featured-title" data-animate="reveal">
-      <div class="section-head container">
-        <h2 id="featured-title">Featured Case Studies</h2>
-        <p class="muted">Problem • Role • Tech • Decisions • Results</p>
-      </div>
-      <!-- grid where featured projects get injected by js -->
-      <div id="featuredGrid" class="grid cols-2 container"></div>
 
-      <!-- template for featured cards - js clones this and fills it in -->
-      <template id="featTpl">
-        <article class="feat-card" data-slug="">
-          <img class="feat-img" alt="" loading="lazy" />
-          <div class="feat-content">
-            <h3 class="feat-title"></h3>
-            <div class="metrics"></div>
-            <p class="feat-blurb"></p>
-            <div class="feat-lines">
-              <div class="line"><b>Role:</b> <span class="feat-role"></span></div>
-              <div class="line"><b>Tech:</b> <span class="feat-tech"></span></div>
-            </div>
-            <div class="feat-actions">
-              <button class="btn btn-sm btn-primary view-details" type="button">Case study</button>
-              <a class="btn btn-sm btn-ghost watch-btn" target="_blank" rel="noopener">Watch</a>
-            </div>
-          </div>
-        </article>
-      </template>
-    </section>
-
-    <!-- all projects section -->
+    <!-- projects section -->
     <section id="projects" aria-labelledby="projects-title" data-animate="reveal">
       <div class="section-head container">
         <h2 id="projects-title">Projects</h2>
-        <!-- filter chips to filter projects by category -->
+        <p class="muted">Featured work first - filter by category or expand to see all</p>
         <div class="filters" role="toolbar" aria-label="Project filters">
           <button class="chip" data-filter="all" aria-pressed="true">All</button>
-          <button class="chip" data-filter="Game Dev">Game Dev</button>
-          <button class="chip" data-filter="Software Dev">Software Dev</button>
-          <button class="chip" data-filter="HCI/UX">HCI/UX</button>
-          <button class="chip" data-filter="AI/Algorithms">AI/Algorithms</button>
+          <button class="chip" data-filter="Software Dev" aria-pressed="false">Software Dev</button>
+          <button class="chip" data-filter="Systems" aria-pressed="false">Systems</button>
+          <button class="chip" data-filter="AI/Algorithms" aria-pressed="false">AI/Algorithms</button>
+          <button class="chip" data-filter="Computer Graphics" aria-pressed="false">Computer Graphics</button>
+          <button class="chip" data-filter="Game Dev" aria-pressed="false">Game Dev</button>
+          <button class="chip" data-filter="HCI/UX" aria-pressed="false">HCI/UX</button>
         </div>
       </div>
-      <!-- grid where all project cards get injected by js -->
       <div id="projectGrid" class="grid cols-3 container" role="list"></div>
+      <div class="show-all-wrap container" id="showAllWrap" style="display:none">
+        <button class="btn btn-ghost" id="showAllProjects">Show all projects</button>
+      </div>
 
-      <!-- template for project cards - js clones this and fills it in (similar to featured)-->
       <template id="cardTpl">
         <article class="card project-card" role="listitem" data-tags="" data-slug="" tabindex="0">
           <span class="badge">Featured</span>
@@ -217,35 +166,266 @@
       </template>
     </section>
 
-    <!-- skills section with logos -->
+    <!-- interactive / live demos section -->
+    <section id="interactive" data-animate="reveal">
+      <div class="section-head container">
+        <h2>Interactive / Live Demos</h2>
+        <p class="muted">Run the work directly in your browser - use the tabs to switch between games, graphics, and AI demos</p>
+      </div>
+      <div class="container">
+
+        <div class="demo-player" data-animate="reveal">
+          <div class="demo-tabs" role="tablist" aria-label="Select a demo">
+            <span class="demo-tab-group-label">Games</span>
+            <button class="demo-tab is-active" data-panel="panel-itsy"        role="tab" aria-selected="true">Itsy</button>
+            <button class="demo-tab"           data-panel="panel-battlezone"  role="tab" aria-selected="false">Neon Battlezone</button>
+            <button class="demo-tab"           data-panel="panel-colorshift"  role="tab" aria-selected="false">Color Shifter</button>
+            <button class="demo-tab"           data-panel="panel-twine"       role="tab" aria-selected="false">Echoes of the Self</button>
+            <span class="demo-tab-group-label">Graphics</span>
+            <button class="demo-tab"           data-panel="panel-raster"      role="tab" aria-selected="false">Black Hole WebGL</button>
+            <button class="demo-tab"           data-panel="panel-texture"     role="tab" aria-selected="false">Minecraft WebGL</button>
+            <span class="demo-tab-group-label">AI</span>
+            <button class="demo-tab"           data-panel="panel-astar"       role="tab" aria-selected="false">A* Pathfinding</button>
+            <button class="demo-tab"           data-panel="panel-connectfour" role="tab" aria-selected="false">Connect Four AI</button>
+          </div>
+
+          <div class="demo-stage">
+
+            <!-- Itsy (Unity WebGL) -->
+            <div class="demo-panel" id="panel-itsy" role="tabpanel">
+              <div class="demo-panel-info">
+                <div class="demo-panel-meta">
+                  <h3>Itsy</h3>
+                  <p class="muted">A published Unity game built in C# - playable right here. Designed, built, and shipped solo. Also available on <a href="https://nhmahmou.itch.io/itsy" target="_blank" rel="noopener" style="color:var(--brand)">itch.io</a>.</p>
+                </div>
+                <div class="demo-panel-chips">
+                  <span class="kbd">Unity</span><span class="kbd">C#</span><span class="kbd">Game Design</span><span class="kbd">Published</span>
+                </div>
+              </div>
+              <iframe class="demo-iframe demo-iframe-tall"
+                data-src="assets/live_preview/itsy/index.html"
+                title="Itsy - Unity WebGL Game"
+                allow="fullscreen"
+                allowfullscreen></iframe>
+            </div>
+
+            <!-- Neon Battlezone -->
+            <div class="demo-panel is-hidden" id="panel-battlezone" role="tabpanel">
+              <div class="demo-panel-info">
+                <div class="demo-panel-meta">
+                  <h3>Neon Battlezone</h3>
+                  <p class="muted">3D arcade game built solo in WebGL from scratch. Click the canvas to focus, then play.
+                    <span class="demo-key-callout">Hit <kbd class="key-badge">!</kbd> (Shift+1) to unlock the full tank level - textured arena, wave enemies, and the upgrade system.</span>
+                  </p>
+                </div>
+                <div class="demo-panel-chips">
+                  <span class="kbd">WebGL</span><span class="kbd">GLSL</span><span class="kbd">AI Combat</span>
+                </div>
+              </div>
+              <div class="demo-controls-bar">
+                <span><kbd>WASD</kbd> Move</span>
+                <span><kbd>Mouse</kbd> Aim</span>
+                <span><kbd>Space</kbd> Shoot</span>
+                <span><kbd>!</kbd> Unlock tank level</span>
+                <span><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> Select upgrade</span>
+              </div>
+              <iframe class="demo-iframe"
+                data-src="assets/live_preview/CSC461_Putting_it_all_together_Battlezone-/index.html"
+                title="Neon Battlezone" allowfullscreen></iframe>
+            </div>
+
+            <!-- Color Shifter -->
+            <div class="demo-panel is-hidden" id="panel-colorshift" role="tabpanel">
+              <div class="demo-panel-info">
+                <div class="demo-panel-meta">
+                  <h3>Color Shifter</h3>
+                  <p class="muted">A PuzzleScript logic puzzle designed around progressive mechanic teaching. Each level introduces exactly one new rule, communicated purely through play with no text instructions. Click the canvas to focus.</p>
+                </div>
+                <div class="demo-panel-chips">
+                  <span class="kbd">PuzzleScript</span><span class="kbd">Puzzle Design</span>
+                </div>
+              </div>
+              <div class="demo-controls-bar">
+                <span><kbd>Arrow Keys</kbd> Move</span>
+                <span><kbd>Z</kbd> Undo move</span>
+                <span><kbd>R</kbd> Restart level</span>
+              </div>
+              <iframe class="demo-iframe"
+                data-src="assets/live_preview/Color Shifter/Color Transformation.html"
+                title="Color Shifter" allowfullscreen></iframe>
+            </div>
+
+            <!-- Echoes of the Self -->
+            <div class="demo-panel is-hidden" id="panel-twine" role="tabpanel">
+              <div class="demo-panel-info">
+                <div class="demo-panel-meta">
+                  <h3>Echoes of the Self</h3>
+                  <p class="muted">A branching narrative built in Twine. Every choice shapes the emotional arc - state variables track your decisions and alter what you see on return visits. No right answer, just consequences.</p>
+                </div>
+                <div class="demo-panel-chips">
+                  <span class="kbd">Twine</span><span class="kbd">Narrative Design</span><span class="kbd">State Management</span>
+                </div>
+              </div>
+              <div class="demo-controls-bar">
+                <span><kbd>Click</kbd> Make a choice</span>
+                <span>Your decisions carry across passages</span>
+              </div>
+              <iframe class="demo-iframe"
+                data-src="assets/live_preview/twine/Twine/Stories/Echoes of the Self.html"
+                title="Echoes of the Self" allowfullscreen></iframe>
+            </div>
+
+            <!-- Black Hole WebGL -->
+            <div class="demo-panel is-hidden" id="panel-raster" role="tabpanel">
+              <div class="demo-panel-info">
+                <div class="demo-panel-meta">
+                  <h3>Black Hole WebGL</h3>
+                  <p class="muted">Custom WebGL rasterization pipeline built from scratch - Blinn-Phong shading, perspective projection, and a full gravitational lensing black hole mode. <span class="demo-key-callout">Press <kbd class="key-badge">!</kbd> (Shift+1) to switch to the black hole.</span></p>
+                </div>
+                <div class="demo-panel-chips">
+                  <span class="kbd">WebGL</span><span class="kbd">GLSL</span><span class="kbd">Blinn-Phong</span>
+                </div>
+              </div>
+              <div class="demo-controls-bar">
+                <span><kbd>W</kbd><kbd>S</kbd> Forward / Back</span>
+                <span><kbd>A</kbd><kbd>D</kbd> Strafe</span>
+                <span><kbd>Q</kbd><kbd>E</kbd> Up / Down</span>
+                <span><kbd>Arrow Keys</kbd> Rotate view</span>
+                <span><kbd>!</kbd> Toggle black hole</span>
+              </div>
+              <iframe class="demo-iframe"
+                data-src="assets/live_preview/CSC461_Prog3_Rasterization/index.html"
+                title="3D Rasterization" allowfullscreen></iframe>
+            </div>
+
+            <!-- Minecraft WebGL -->
+            <div class="demo-panel is-hidden" id="panel-texture" role="tabpanel">
+              <div class="demo-panel-info">
+                <div class="demo-panel-meta">
+                  <h3>Minecraft WebGL</h3>
+                  <p class="muted">A Minecraft-style 3D world built entirely in WebGL - texture atlases, alpha-blended transparency, chroma-key billboards, and per-fragment Blinn-Phong lighting. Walk around with WASD + arrow keys.</p>
+                </div>
+                <div class="demo-panel-chips">
+                  <span class="kbd">WebGL</span><span class="kbd">Textures</span><span class="kbd">Alpha Blending</span>
+                </div>
+              </div>
+              <div class="demo-controls-bar">
+                <span><kbd>W</kbd><kbd>S</kbd> Forward / Back</span>
+                <span><kbd>A</kbd><kbd>D</kbd> Strafe</span>
+                <span><kbd>Q</kbd><kbd>E</kbd> Up / Down</span>
+                <span><kbd>Arrow Keys</kbd> Rotate view</span>
+              </div>
+              <iframe class="demo-iframe"
+                data-src="assets/live_preview/CSC461_Prog4_Texture_and_Transparency/index.html"
+                title="Texture and Transparency" allowfullscreen></iframe>
+            </div>
+
+            <!-- A* Pathfinding -->
+            <div class="demo-panel is-hidden" id="panel-astar" role="tabpanel">
+              <div class="demo-panel-info">
+                <div class="demo-panel-meta">
+                  <h3>A* Pathfinding Visualizer</h3>
+                  <p class="muted">Draw walls, place a start and goal, then watch A* find the shortest path in real time. Built from the same algorithm as the Java robot agent in CSC 411.</p>
+                </div>
+                <div class="demo-panel-chips">
+                  <span class="kbd">A* Search</span><span class="kbd">JavaScript</span><span class="kbd">Interactive</span>
+                </div>
+              </div>
+              <div class="demo-controls-bar">
+                <span><kbd>Click / Drag</kbd> Draw walls</span>
+                <span><kbd>Run A*</kbd> Find path</span>
+                <span><kbd>Clear path</kbd> Keep walls</span>
+                <span><kbd>Random maze</kbd> Auto-generate</span>
+                <span>Speed slider controls animation</span>
+              </div>
+              <div class="ai-explainer">
+                <div class="ai-explainer-item">
+                  <span class="ai-explainer-icon"></span>
+                  <div>
+                    <strong>Each cell gets a score: f = g + h</strong>
+                    <p><code>g</code> = exact steps taken from the start to reach this cell. <code>h</code> = estimated steps still needed to reach the goal (Manhattan distance - no diagonals). A* always expands the cell with the lowest <code>f = g + h</code> next. That means it balances "how far did I travel?" against "how far do I still have to go?" - favouring cells that are both reachable cheaply <em>and</em> pointed toward the goal.</p>
+                  </div>
+                </div>
+                <div class="ai-explainer-item">
+                  <span class="ai-explainer-icon"></span>
+                  <div>
+                    <strong>Frontier vs explored (yellow vs purple)</strong>
+                    <p>The <strong>yellow cells</strong> are the frontier - cells discovered but not yet fully processed. Each iteration, A* picks the lowest-f cell from the frontier, moves it to <strong>explored (purple)</strong>, and adds its neighbours to the frontier. Notice how the frontier is pushed toward the goal, skipping large parts of the grid that would only make the path longer.</p>
+                  </div>
+                </div>
+                <div class="ai-explainer-item">
+                  <span class="ai-explainer-icon"></span>
+                  <div>
+                    <strong>Why the heuristic must not overestimate</strong>
+                    <p>If <code>h</code> always underestimates (or matches) the true remaining cost, A* is guaranteed to find the shortest path. If <code>h</code> ever overestimates, A* might dismiss a cheap route as "too far" and return a longer one. Manhattan distance on a grid never overestimates - so the path shown is always optimal.</p>
+                  </div>
+                </div>
+              </div>
+              <div id="astar-app"></div>
+            </div>
+
+            <!-- Connect Four -->
+            <div class="demo-panel is-hidden" id="panel-connectfour" role="tabpanel">
+              <div class="demo-panel-info">
+                <div class="demo-panel-meta">
+                  <h3>Connect Four: Minimax AI</h3>
+                  <p class="muted">Play against an AI that looks 5 moves ahead using minimax with alpha-beta pruning. It assumes you play perfectly and picks the move that wins even in the worst case. Drop a piece by clicking a column.</p>
+                </div>
+                <div class="demo-panel-chips">
+                  <span class="kbd">Minimax</span><span class="kbd">Alpha-Beta</span><span class="kbd">Adversarial Search</span>
+                </div>
+              </div>
+              <div class="ai-explainer">
+                <div class="ai-explainer-item">
+                  <span class="ai-explainer-icon"></span>
+                  <div>
+                    <strong>What is Minimax?</strong>
+                    <p>The AI builds a tree of every possible move and countermove up to 5 turns deep. On its turns it picks the move that maximizes its score; on your turns it assumes you pick the move that minimizes it. The result: an agent that plays safe, aggressive, or defensive depending purely on board state.</p>
+                  </div>
+                </div>
+                <div class="ai-explainer-item">
+                  <span class="ai-explainer-icon"></span>
+                  <div>
+                    <strong>Alpha-beta pruning</strong>
+                    <p>Without pruning, depth-5 search would evaluate thousands of useless positions. Alpha-beta cuts off branches the moment it knows they can't possibly improve the result - reducing the search tree by up to 50% with zero impact on the final answer.</p>
+                  </div>
+                </div>
+              </div>
+              <div id="c4-app"></div>
+            </div>
+
+          </div><!-- /demo-stage -->
+        </div><!-- /demo-player -->
+
+      </div>
+    </section>
+
+    <!-- skills section -->
     <section id="skills" class="section-alt" data-animate="reveal">
       <div class="section-head container">
         <h2>Skills</h2>
         <p class="muted">Technical competencies organized by category</p>
       </div>
-      <!-- container where skill logos get injected by js -->
       <div id="skillsLogoWrap" class="skills-logo-wrap container"></div>
     </section>
 
-    <!-- experience/timeline section -->
+    <!-- experience timeline -->
     <section id="experience" data-animate="reveal">
       <div class="section-head container">
-        <h2>Experience</h2><p class="muted">Selected roles & impact</p>
+        <h2>Experience</h2><p class="muted">Selected roles &amp; impact</p>
       </div>
-      <!-- timeline where experience items get injected by js -->
       <div class="timeline container" id="timeline"></div>
     </section>
 
-    <!-- coursework section -->
+    <!-- coursework -->
     <section id="coursework" class="section-alt" data-animate="reveal">
       <div class="section-head container">
-        <h2>Coursework</h2><p class="muted">Representative classes & competencies</p>
+        <h2>Coursework</h2><p class="muted">Representative classes &amp; competencies</p>
       </div>
-      <!-- grid where coursework gets injected by js -->
       <div class="skills skills-cw container" id="courseworkGrid"></div>
     </section>
 
-    <!-- contact form section -->
+    <!-- contact -->
     <section id="contact" data-animate="reveal">
       <div class="section-head container">
         <h2>Contact</h2>
@@ -253,61 +433,57 @@
       </div>
       <div class="container">
         <form id="contactForm" name="contact" class="contact-form">
-          
-          <!-- form fields -->
           <div class="form-row">
             <input name="name" placeholder="Your name" required aria-label="Your name" />
             <input type="email" name="email" placeholder="Email" required aria-label="Email address" />
           </div>
           <textarea name="message" placeholder="Message" rows="5" required aria-label="Message"></textarea>
-          <!-- status message area for form feedback -->
           <div class="form-status" aria-live="polite"></div>
           <button class="btn btn-primary" type="submit">Send Message</button>
         </form>
       </div>
     </section>
-
-
-
   </main>
 
   <!-- footer -->
   <footer class="footer">
-    <div class="container">© <span id="year"></span> Nour Mahmoud • Built with HTML/CSS/JS • <a href="#home">Back to top</a></div>
+    <div class="container">&copy; <span id="year"></span> Nour Mahmoud &middot; Built with HTML/CSS/JS &middot; <a href="#home">Back to top</a> &middot; <kbd class="cmdk-hint">&#x2318;K</kbd></div>
   </footer>
 
-
-  <!-- modal popup for project details -->
+  <!-- project modal -->
   <div id="projectModal" class="modal" hidden>
-    <!-- backdrop that darkens the background -->
     <div class="modal-backdrop"></div>
-
     <div class="modal-inner">
-      <!-- close button -->
-      <button class="modal-close" aria-label="Close">✕</button>
-
-      <!-- header with title, metrics, and description -->
+      <button class="modal-close" aria-label="Close">&times;</button>
       <div class="modal-head">
         <h3 id="modalTitle"></h3>
         <div class="metrics" id="modalMetrics"></div>
         <p class="muted" id="modalBlurb"></p>
       </div>
-
-      <!-- media carousel for images/videos -->
       <div class="modal-media">
-        <button class="carousel-btn prev" aria-label="Previous media" aria-keyshortcuts="ArrowLeft">‹</button>
+        <button class="carousel-btn prev" aria-label="Previous media" aria-keyshortcuts="ArrowLeft">&#8249;</button>
         <div class="media-stage" id="mediaStage" aria-live="polite" role="img" aria-label="Project media"></div>
-        <button class="carousel-btn next" aria-label="Next media" aria-keyshortcuts="ArrowRight">›</button>
+        <button class="carousel-btn next" aria-label="Next media" aria-keyshortcuts="ArrowRight">&#8250;</button>
       </div>
-
-      <!-- case study sections get injected here by js -->
+      <div id="mediaCounter" style="text-align:center;font-size:.8rem;color:var(--muted);margin-top:4px;"></div>
       <div class="case-sections" id="caseSections"></div>
-
-      <!-- links to external stuff like gameplay videos, pdfs, etc -->
       <div class="links" id="modalLinks"></div>
     </div>
   </div>
 
+  <!-- CmdK palette -->
+  <div id="cmdk" class="cmdk" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="cmdk-backdrop"></div>
+    <div class="cmdk-panel">
+      <input id="cmdk-input" type="text" placeholder="Jump to&#x2026; (try 'projects', 'engine', 'contact')" autocomplete="off" spellcheck="false" aria-label="Search" />
+      <div id="cmdk-list" role="listbox" aria-label="Navigation options"></div>
+      <div class="cmdk-foot muted">
+        <span>Up / Down to navigate</span>
+        <span>Enter to open</span>
+        <span>Esc to close</span>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
